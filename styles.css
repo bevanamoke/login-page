@@ -54,16 +54,7 @@ main {
     transition: 0.8s ease-in-out;
 }
 
-.carousel {
-    position: absolute;
-    height: 100%;
-    width: 55%;
-    left: 45%;
-    top: 0;
-    background-color: #ffe0d2;
-    border-radius: 2rem;
-    transition: 0.8s ease-in-out;
-}
+
 
 form {
     max-width: 260px;
@@ -128,9 +119,7 @@ form {
     margin-bottom: 2rem;
 }
 
-form.sign-in-form {
-    display: ;
-}
+
 
 form.sign-up-form {
     opacity: 0;
@@ -223,4 +212,88 @@ main.sign-up-mode form.sign-in-form {
 main.sign-up-mode form.sign-up-form {
     opacity: 1;
     pointer-events: all;
+}
+
+.carousel {
+    position: absolute;
+    height: 100%;
+    width: 55%;
+    left: 45%;
+    top: 0;
+    background-color: #ffe0d2;
+    border-radius: 2rem;
+    transition: 0.8s ease-in-out;
+    display: grid;
+    grid-template-rows: auto 1fr ;
+}
+
+.images-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.image {
+    width: 60%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    opacity: 0;
+}
+
+.image.show {
+    opacity: 1;
+}
+
+.bullets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.bullets span{
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #aaa;
+    margin: 0 0.25rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.text-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.text-wrap {
+    max-height: 2.2rem;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    
+}
+
+.text-group h2 {
+    line-height: 2.2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.text-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transform: translateY(0);
+    transition: 0.2s;
+}
+
+.bullets span.active{
+    width: 1.1rem;
+    background-color: #151111;
+    border-radius: 1rem;
+
 }
